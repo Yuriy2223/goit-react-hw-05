@@ -39,7 +39,7 @@ export async function fetchMovieReviewsById(movieId) {
 export { default as MoviesList } from "./MoviesList/MoviesList";
 export { default as MovieListItem } from "./MovieListItem/MovieListItem";
 export { default as Navigation } from "../components/Navigation/Navigation";
-export { default as MovieDetailsPage } from "../Pages/MovieDetailsPage/MovieDetailsPage";
+export { default as MovieDetailsPage } from "../pages/MovieDetailsPage/MovieDetailsPage";
 export { default as SearchBar } from "../components/SearchBar/SearchBar";
 export { default as MovieCast } from "../components/MovieCast/MovieCast";
 export { default as MovieReviews } from "../components/MovieReviews/MovieReviews";

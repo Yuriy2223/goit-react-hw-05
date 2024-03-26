@@ -2,15 +2,13 @@ import { Routes, Route } from "react-router-dom";
 import { fetchTrendingMovies } from "./components/index";
 import { fetchMovieDetails } from "./components/index";
 import { fetchMovieDetailsById } from "./components/index";
-import { HomePage, MoviesPage, NotFoundPage } from "./Pages";
+import { HomePage, MoviesPage, NotFoundPage } from "./pages";
 import Navigation from "./components/Navigation/Navigation";
-
 import { Suspense, lazy } from "react";
-
 import "./App.css";
 
 const MovieDetailsPage = lazy(() =>
-  import("./Pages/MovieDetailsPage/MovieDetailsPage")
+  import("./pages/MovieDetailsPage/MovieDetailsPage")
 );
 
 const MovieCast = lazy(() => import("./components/MovieCast/MovieCast"));
