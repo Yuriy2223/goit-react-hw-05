@@ -1,0 +1,33 @@
+* {
+  box-sizing: border-box;
+  padding: 0px;
+  margin: 0px;
+  
+}
+
+img {
+  display: block;
+  width: 100%;
+  object-fit: cover;
+  overflow: hidden;
+}
+
+input,
+button,
+a,
+ul,
+button {
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  outline: none;
+  text-decoration: none;
+  list-style-type: none;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+}

@@ -1,0 +1,40 @@
+/* .box {
+} */
+
+.loading,
+.errorLoading {
+  padding: 20px 100px 20px;
+  color: rgb(161, 12, 25);
+  font-size: 24px;
+  border-radius: 0 0 8px 8px;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 15px;
+  padding-top: 15px;
+}
+
+.item {
+  border: 1px solid blue;
+  border-radius: 8px;
+  padding: 10px;
+  transition: box-shadow 0.3s ease;
+}
+
+.item:hover {
+  box-shadow: 0 0 10px blue;
+}
+
+.author {
+  font-size: 20px;
+  font-weight: 700;
+  padding-bottom: 7px;
+}
+
+.text {
+  max-height: 200px;
+  overflow-y: auto;
+}
