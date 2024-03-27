@@ -3,3 +3,12 @@
   border: 1px solid blue;
   border-radius: 0 0 8px 8px;
 }
+
+.loading,
+.errorLoading {
+  background-color: rgba(255, 255, 0, 0.541);
+  padding: 12px 100px;
+  color: rgb(161, 12, 25);
+  font-size: 24px;
+  border-radius: 0 0 8px 8px;
+}

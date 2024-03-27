@@ -1,7 +1,4 @@
 import { Routes, Route } from "react-router-dom";
-import { fetchTrendingMovies } from "./components/index";
-import { fetchMovieDetails } from "./components/index";
-import { fetchMovieDetailsById } from "./components/index";
 import { HomePage, MoviesPage, NotFoundPage } from "./pages";
 import Navigation from "./components/Navigation/Navigation";
 import { Suspense, lazy } from "react";
@@ -25,20 +22,9 @@ const App = () => {
           <Navigation />
         </header>
         <Routes>
-          <Route
-            path="/"
-            element={<HomePage fetchMovies={fetchTrendingMovies} />}
-          />
-          <Route
-            path="/movies"
-            element={<MoviesPage fetchMovies={fetchMovieDetails} />}
-          />
-          <Route
-            path="/movies/:movieId"
-            element={
-              <MovieDetailsPage fetchMovieDetails={fetchMovieDetailsById} />
-            }
-          >
+          <Route path="/" element={<HomePage />} />
+          <Route path="/movies" element={<MoviesPage />} />
+          <Route path="/movies/:movieId" element={<MovieDetailsPage />}>
             <Route path="cast" element={<MovieCast />} />
             <Route path="reviews" element={<MovieReviews />} />
           </Route>

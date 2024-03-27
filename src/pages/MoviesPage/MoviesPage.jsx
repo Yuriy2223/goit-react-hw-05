@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
 import { useSearchParams, useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
-import { fetchMovieDetails, MoviesList, SearchBar } from "../../components";
+import { fetchMovieDetails, MovieList, SearchBar } from "../../components";
 import styles from "./MoviesPage.module.css";
 
 const MoviesPage = () => {
   const [movies, setMovies] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
-  const [isError, setIsError] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(false);
   const [searchParams] = useSearchParams();
   const navigate = useNavigate();
   const query = searchParams.get("query") || "";
@@ -17,8 +17,8 @@ const MoviesPage = () => {
 
     async function fetchDataByQuery() {
       try {
-        setIsLoading(true);
-        setIsError(false);
+        setLoading(true);
+        setError(false);
 
         const response = await fetchMovieDetails(query);
         if (response) {
@@ -27,11 +27,10 @@ const MoviesPage = () => {
           toast.success("No movies found!");
         }
       } catch (error) {
-        console.log(error);
-        setIsError(true);
+        setError(`Network error: ${error}`);
         toast.error(`Network error: ${error}`);
       } finally {
-        setIsLoading(false);
+        setLoading(false);
       }
     }
 
@@ -42,11 +41,18 @@ const MoviesPage = () => {
     navigate(query ? `?query=${query}` : "/");
   };
 
+  if (loading) {
+    return <div className={styles.loading}>Loading...</div>;
+  }
+
+  if (error) {
+    return <div className={styles.errorLoading}>Error: {error}</div>;
+  }
+
   return (
     <div className={styles.moviesPage}>
       <SearchBar onSubmit={onSearchHandler} />
-      {!isError && isLoading}
-      {movies.length > 0 && <MoviesList movies={movies} />}
+      {movies.length > 0 && <MovieList movies={movies} />}
     </div>
   );
 };

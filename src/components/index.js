@@ -36,7 +36,7 @@ export async function fetchMovieReviewsById(movieId) {
   return response.data.results;
 }
 
-export { default as MoviesList } from "./MoviesList/MoviesList";
+export { default as MovieList } from "./MovieList/MovieList";
 export { default as MovieListItem } from "./MovieListItem/MovieListItem";
 export { default as Navigation } from "../components/Navigation/Navigation";
 export { default as MovieDetailsPage } from "../pages/MovieDetailsPage/MovieDetailsPage";
