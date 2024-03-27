@@ -13,19 +13,21 @@
   gap: 5px;
   border-radius: 8px;
   transition: box-shadow 0.3s ease;
+  /* box-shadow: 0 0 10px blue; */
 }
-
+/* 
 .item:hover {
   box-shadow: 0 0 10px blue;
-}
+} */
 
 .img {
   border-radius: 8px;
+  /* box-shadow: 0 10px 10px -10px blue */
 }
-
+/* 
 .item:hover .img {
   box-shadow: 0 10px 10px -10px blue;
-}
+} */
 
 .text {
   text-align: center;

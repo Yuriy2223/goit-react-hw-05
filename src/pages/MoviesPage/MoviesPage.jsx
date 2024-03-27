@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useSearchParams, useNavigate } from "react-router-dom";
+import { useSearchParams } from "react-router-dom";
 import toast from "react-hot-toast";
 import { fetchMovieDetails, MovieList, SearchBar } from "../../components";
 import styles from "./MoviesPage.module.css";
@@ -8,8 +8,7 @@ const MoviesPage = () => {
   const [movies, setMovies] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
-  const [searchParams] = useSearchParams();
-  const navigate = useNavigate();
+  const [searchParams, setSearchParams] = useSearchParams();
   const query = searchParams.get("query") || "";
 
   useEffect(() => {
@@ -38,7 +37,7 @@ const MoviesPage = () => {
   }, [query]);
 
   const onSearchHandler = (query) => {
-    navigate(query ? `?query=${query}` : "/");
+    setSearchParams({ query });
   };
 
   if (loading) {
