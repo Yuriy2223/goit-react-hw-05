@@ -6,7 +6,10 @@ import { useMemo } from "react";
 const MovieListItem = ({ movie }) => {
   const location = useLocation();
   const { id, poster_path, title, release_date, vote_average } = movie;
-  const imgSrc = `https://image.tmdb.org/t/p/w500${poster_path}`;
+  // const imgSrc = `https://image.tmdb.org/t/p/w500${poster_path}`;
+  const imgSrc = poster_path
+    ? `https://image.tmdb.org/t/p/w500${poster_path}`
+    : "placeholder.jpg";
 
   const formattedDate = useMemo(() => {
     return release_date
